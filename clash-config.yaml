@@ -3,6 +3,9 @@ ipv6: true
 allow-lan: true
 mode: rule
 log-level: info
+keepalive: 25
+keep-alive-idle: 10
+keep-alive-interval: 15
 unified-delay: false
 geo-auto-update: true
 geo-update-interval: 168
@@ -10,23 +13,44 @@ external-controller: 127.0.0.1:9090
 secret: Hpp@19921992
 external-ui: ui
 external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+external-controller-cors:
+  allow-origins:
+  - '*'
+  allow-private-network: true
+profile:
+  store-selected: true
+  store-fake-ip: true
+hosts: {}
 dns:
   enable: true
   listen: 0.0.0.0:1053
   ipv6: false
   respect-rules: true
   use-hosts: true
+  use-system-hosts: false
   nameserver:
   - https://1.1.1.1/dns-query
   - https://8.8.8.8/dns-query
+  - https://dns.quad9.net/dns-query
   proxy-server-nameserver:
   - 178.22.122.100
   - 185.51.200.2
+  - 10.202.10.10
+  - 10.202.10.11
   nameserver-policy:
     domain:+.ir:
     - proxy-server-nameserver
     all:
     - nameserver
+  fallback-filter:
+    geoip: true
+    geoip-code: IR
+    ipcidr:
+    - 240.0.0.0/4
+    geosite:
+    - cn
+    domain:
+    - +.ir
 tun:
   enable: true
   stack: gvisor
@@ -41,6 +65,7 @@ sniffer:
   enable: true
   force-dns-mapping: true
   parse-pure-ip: true
+  override-destination: false
   sniff:
     HTTP:
       ports:
@@ -64,560 +89,7560 @@ sniffer:
       - 443
       - 8443
 proxies:
-- name: Auto-1
+- name: 🔗 1
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-2
+- name: 🔗 2
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-3
+- name: 🔗 3
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-4
+- name: 🔗 4
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-5
+- name: 🔗 5
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-6
+- name: 🔗 6
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-7
+- name: 🔗 7
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-8
+- name: 🔗 8
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-9
+- name: 🔗 9
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-10
+- name: 🔗 10
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-11
+- name: 🔗 11
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-12
+- name: 🔗 12
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-13
+- name: 🔗 13
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-14
+- name: 🔗 14
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-15
+- name: 🔗 15
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-16
+- name: 🔗 16
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-17
+- name: 🔗 17
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-18
+- name: 🔗 18
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-19
+- name: 🔗 19
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-20
+- name: 🔗 20
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-21
+- name: 🔗 21
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-22
+- name: 🔗 22
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-23
+- name: 🔗 23
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-24
+- name: 🔗 24
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-25
+- name: 🔗 25
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-26
+- name: 🔗 26
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-27
+- name: 🔗 27
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-28
+- name: 🔗 28
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-29
+- name: 🔗 29
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-30
+- name: 🔗 30
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-31
+- name: 🔗 31
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-32
+- name: 🔗 32
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-33
+- name: 🔗 33
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-34
+- name: 🔗 34
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-35
+- name: 🔗 35
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-36
+- name: 🔗 36
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-37
+- name: 🔗 37
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-38
+- name: 🔗 38
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-39
+- name: 🔗 39
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-40
+- name: 🔗 40
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-41
+- name: 🔗 41
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-42
+- name: 🔗 42
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-43
+- name: 🔗 43
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-44
+- name: 🔗 44
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-45
+- name: 🔗 45
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-46
+- name: 🔗 46
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-47
+- name: 🔗 47
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-48
+- name: 🔗 48
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-49
+- name: 🔗 49
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Auto-50
+- name: 🔗 50
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-51
+- name: 🔗 51
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-52
+- name: 🔗 52
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-53
+- name: 🔗 53
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-54
+- name: 🔗 54
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-55
+- name: 🔗 55
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-56
+- name: 🔗 56
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-57
+- name: 🔗 57
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-58
+- name: 🔗 58
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-59
+- name: 🔗 59
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-60
+- name: 🔗 60
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-61
+- name: 🔗 61
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-62
+- name: 🔗 62
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-63
+- name: 🔗 63
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-64
+- name: 🔗 64
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-65
+- name: 🔗 65
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-66
+- name: 🔗 66
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-67
+- name: 🔗 67
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-68
+- name: 🔗 68
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-69
+- name: 🔗 69
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-70
+- name: 🔗 70
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-71
+- name: 🔗 71
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-72
+- name: 🔗 72
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-73
+- name: 🔗 73
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-74
+- name: 🔗 74
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-75
+- name: 🔗 75
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-76
+- name: 🔗 76
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-77
+- name: 🔗 77
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-78
+- name: 🔗 78
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-79
+- name: 🔗 79
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
   password: dummy
   udp: true
-- name: Proxy-80
+- name: 🔗 80
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 81
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 82
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 83
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 84
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 85
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 86
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 87
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 88
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 89
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 90
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 91
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 92
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 93
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 94
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 95
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 96
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 97
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 98
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 99
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 100
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 101
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 102
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 103
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 104
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 105
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 106
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 107
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 108
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 109
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 110
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 111
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 112
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 113
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 114
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 115
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 116
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 117
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 118
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 119
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 120
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 121
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 122
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 123
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 124
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 125
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 126
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 127
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 128
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 129
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 130
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 131
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 132
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 133
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 134
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 135
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 136
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 137
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 138
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 139
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 140
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 141
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 142
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 143
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 144
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 145
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 146
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 147
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 148
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 149
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 150
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 151
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 152
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 153
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 154
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 155
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 156
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 157
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 158
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 159
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 160
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 161
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 162
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 163
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 164
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 165
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 166
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 167
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 168
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 169
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 170
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 171
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 172
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 173
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 174
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 175
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 176
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 177
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 178
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 179
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 180
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 181
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 182
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 183
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 184
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 185
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 186
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 187
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 188
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 189
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 190
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 191
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 192
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 193
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 194
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 195
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 196
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 197
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 198
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 199
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 200
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 201
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 202
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 203
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 204
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 205
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 206
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 207
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 208
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 209
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 210
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 211
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 212
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 213
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 214
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 215
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 216
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 217
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 218
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 219
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 220
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 221
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 222
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 223
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 224
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 225
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 226
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 227
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 228
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 229
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 230
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 231
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 232
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 233
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 234
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 235
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 236
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 237
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 238
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 239
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 240
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 241
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 242
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 243
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 244
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 245
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 246
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 247
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 248
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 249
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 250
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 251
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 252
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 253
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 254
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 255
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 256
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 257
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 258
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 259
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 260
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 261
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 262
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 263
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 264
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 265
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 266
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 267
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 268
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 269
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 270
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 271
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 272
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 273
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 274
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 275
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 276
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 277
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 278
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 279
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 280
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 281
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 282
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 283
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 284
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 285
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 286
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 287
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 288
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 289
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 290
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 291
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 292
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 293
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 294
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 295
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 296
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 297
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 298
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 299
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 300
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 301
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 302
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 303
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 304
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 305
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 306
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 307
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 308
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 309
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 310
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 311
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 312
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 313
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 314
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 315
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 316
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 317
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 318
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 319
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 320
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 321
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 322
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 323
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 324
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 325
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 326
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 327
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 328
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 329
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 330
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 331
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 332
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 333
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 334
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 335
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 336
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 337
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 338
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 339
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 340
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 341
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 342
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 343
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 344
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 345
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 346
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 347
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 348
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 349
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 350
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 351
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 352
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 353
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 354
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 355
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 356
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 357
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 358
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 359
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 360
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 361
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 362
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 363
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 364
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 365
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 366
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 367
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 368
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 369
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 370
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 371
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 372
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 373
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 374
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 375
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 376
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 377
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 378
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 379
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 380
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 381
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 382
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 383
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 384
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 385
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 386
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 387
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 388
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 389
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 390
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 391
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 392
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 393
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 394
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 395
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 396
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 397
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 398
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 399
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 400
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 401
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 402
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 403
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 404
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 405
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 406
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 407
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 408
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 409
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 410
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 411
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 412
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 413
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 414
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 415
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 416
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 417
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 418
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 419
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 420
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 421
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 422
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 423
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 424
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 425
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 426
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 427
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 428
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 429
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 430
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 431
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 432
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 433
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 434
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 435
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 436
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 437
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 438
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 439
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 440
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 441
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 442
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 443
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 444
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 445
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 446
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 447
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 448
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 449
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 450
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 451
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 452
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 453
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 454
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 455
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 456
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 457
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 458
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 459
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 460
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 461
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 462
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 463
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 464
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 465
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 466
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 467
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 468
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 469
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 470
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 471
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 472
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 473
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 474
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 475
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 476
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 477
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 478
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 479
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 480
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 481
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 482
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 483
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 484
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 485
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 486
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 487
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 488
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 489
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 490
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 491
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 492
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 493
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 494
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 495
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 496
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 497
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 498
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 499
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 500
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 501
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 502
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 503
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 504
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 505
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 506
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 507
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 508
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 509
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 510
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 511
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 512
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 513
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 514
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 515
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 516
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 517
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 518
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 519
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 520
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 521
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 522
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 523
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 524
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 525
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 526
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 527
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 528
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 529
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 530
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 531
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 532
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 533
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 534
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 535
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 536
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 537
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 538
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 539
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 540
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 541
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 542
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 543
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 544
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 545
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 546
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 547
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 548
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 549
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 550
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 551
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 552
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 553
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 554
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 555
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 556
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 557
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 558
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 559
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 560
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 561
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 562
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 563
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 564
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 565
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 566
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 567
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 568
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 569
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 570
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 571
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 572
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 573
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 574
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 575
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 576
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 577
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 578
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 579
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 580
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 581
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 582
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 583
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 584
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 585
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 586
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 587
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 588
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 589
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 590
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 591
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 592
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 593
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 594
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 595
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 596
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 597
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 598
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 599
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 600
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 601
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 602
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 603
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 604
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 605
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 606
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 607
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 608
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 609
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 610
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 611
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 612
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 613
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 614
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 615
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 616
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 617
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 618
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 619
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 620
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 621
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 622
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 623
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 624
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 625
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 626
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 627
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 628
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 629
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 630
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 631
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 632
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 633
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 634
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 635
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 636
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 637
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 638
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 639
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 640
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 641
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 642
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 643
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 644
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 645
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 646
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 647
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 648
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 649
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 650
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 651
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 652
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 653
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 654
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 655
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 656
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 657
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 658
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 659
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 660
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 661
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 662
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 663
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 664
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 665
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 666
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 667
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 668
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 669
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 670
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 671
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 672
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 673
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 674
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 675
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 676
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 677
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 678
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 679
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 680
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 681
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 682
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 683
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 684
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 685
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 686
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 687
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 688
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 689
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 690
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 691
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 692
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 693
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 694
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 695
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 696
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 697
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 698
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 699
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 700
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 701
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 702
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 703
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 704
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 705
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 706
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 707
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 708
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 709
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 710
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 711
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 712
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 713
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 714
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 715
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 716
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 717
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 718
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 719
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 720
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 721
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 722
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 723
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 724
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 725
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 726
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 727
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 728
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 729
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 730
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 731
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 732
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 733
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 734
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 735
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 736
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 737
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 738
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 739
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 740
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 741
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 742
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 743
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 744
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 745
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 746
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 747
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 748
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 749
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 750
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 751
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 752
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 753
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 754
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 755
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 756
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 757
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 758
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 759
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 760
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 761
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 762
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 763
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 764
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 765
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 766
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 767
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 768
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 769
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 770
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 771
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 772
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 773
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 774
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 775
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 776
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 777
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 778
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 779
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 780
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 781
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 782
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 783
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 784
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 785
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 786
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 787
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 788
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 789
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 790
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 791
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 792
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 793
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 794
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 795
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 796
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 797
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 798
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 799
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 800
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 801
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 802
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 803
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 804
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 805
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 806
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 807
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 808
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 809
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 810
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 811
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 812
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 813
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 814
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 815
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 816
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 817
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 818
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 819
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 820
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 821
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 822
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 823
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 824
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 825
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 826
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 827
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 828
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 829
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 830
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 831
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 832
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 833
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 834
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 835
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 836
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 837
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 838
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 839
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 840
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 841
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 842
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 843
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 844
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 845
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 846
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 847
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 848
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 849
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 850
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 851
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 852
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 853
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 854
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 855
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 856
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 857
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 858
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 859
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 860
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 861
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 862
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 863
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 864
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 865
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 866
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 867
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 868
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 869
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 870
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 871
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 872
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 873
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 874
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 875
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 876
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 877
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 878
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 879
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 880
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 881
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 882
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 883
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 884
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 885
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 886
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 887
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 888
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 889
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 890
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 891
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 892
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 893
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 894
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 895
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 896
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 897
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 898
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 899
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 900
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 901
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 902
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 903
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 904
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 905
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 906
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 907
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 908
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 909
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 910
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 911
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 912
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 913
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 914
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 915
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 916
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 917
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 918
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 919
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 920
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 921
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 922
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 923
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 924
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 925
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 926
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 927
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 928
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 929
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 930
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 931
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 932
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 933
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 934
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 935
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 936
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 937
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 938
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 939
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 940
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 941
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 942
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 943
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 944
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 945
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 946
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 947
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 948
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 949
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 950
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 951
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 952
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 953
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 954
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 955
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 956
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 957
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 958
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 959
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 960
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 961
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 962
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 963
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 964
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 965
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 966
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 967
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 968
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 969
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 970
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 971
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 972
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 973
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 974
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 975
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 976
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 977
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 978
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 979
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 980
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 981
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 982
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 983
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 984
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 985
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 986
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 987
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 988
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 989
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 990
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 991
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 992
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 993
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 994
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 995
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 996
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 997
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 998
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 999
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1000
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1001
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1002
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1003
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1004
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1005
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1006
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1007
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1008
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1009
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1010
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1011
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1012
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1013
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1014
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1015
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1016
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1017
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1018
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1019
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1020
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1021
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1022
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1023
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1024
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1025
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1026
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1027
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1028
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1029
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1030
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1031
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1032
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1033
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1034
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1035
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1036
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1037
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1038
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1039
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1040
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1041
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1042
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1043
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1044
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1045
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1046
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1047
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1048
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1049
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1050
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1051
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1052
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1053
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1054
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1055
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1056
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1057
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1058
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1059
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1060
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1061
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1062
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1063
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1064
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1065
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1066
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1067
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1068
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1069
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1070
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1071
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1072
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1073
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1074
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1075
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1076
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1077
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1078
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1079
+  type: ss
+  server: 127.0.0.1
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dummy
+  udp: true
+- name: 🔗 1080
   type: ss
   server: 127.0.0.1
   port: 443
@@ -629,91 +7654,1192 @@ proxy-groups:
   type: select
   proxies:
   - اتصال❤️خودکار
+  - Auto-1
+  - Auto-2
+  - Auto-3
+  - Auto-4
+  - Auto-5
+  - Auto-6
+  - Auto-7
+  - Auto-8
+  - Auto-9
+  - Auto-10
+  - Auto-11
+  - Auto-12
+  - Auto-13
+  - Auto-14
+  - Auto-15
+  - Auto-16
+  - Auto-17
+  - Auto-18
+  - Auto-19
+  - Auto-20
+  - Auto-21
+  - Auto-22
+  - Auto-23
+  - Auto-24
+  - Auto-25
+  - Auto-26
+  - Auto-27
+  - Auto-28
+  - Auto-29
+  - Auto-30
 - name: اتصال❤️خودکار
   type: url-test
   url: http://www.google.com/generate_204
-  interval: 180
+  interval: 120
   tolerance: 100
   proxies:
-  - Proxy-1
-  - Proxy-2
-  - Proxy-3
-  - Proxy-4
-  - Proxy-5
-  - Proxy-6
-  - Proxy-7
-  - Proxy-8
-  - Proxy-9
-  - Proxy-10
-  - Proxy-11
-  - Proxy-12
-  - Proxy-13
-  - Proxy-14
-  - Proxy-15
-  - Proxy-16
-  - Proxy-17
-  - Proxy-18
-  - Proxy-19
-  - Proxy-20
-  - Proxy-21
-  - Proxy-22
-  - Proxy-23
-  - Proxy-24
-  - Proxy-25
-  - Proxy-26
-  - Proxy-27
-  - Proxy-28
-  - Proxy-29
-  - Proxy-30
-  - Proxy-31
-  - Proxy-32
-  - Proxy-33
-  - Proxy-34
-  - Proxy-35
-  - Proxy-36
-  - Proxy-37
-  - Proxy-38
-  - Proxy-39
-  - Proxy-40
-  - Proxy-41
-  - Proxy-42
-  - Proxy-43
-  - Proxy-44
-  - Proxy-45
-  - Proxy-46
-  - Proxy-47
-  - Proxy-48
-  - Proxy-49
-  - Proxy-50
-  - Proxy-51
-  - Proxy-52
-  - Proxy-53
-  - Proxy-54
-  - Proxy-55
-  - Proxy-56
-  - Proxy-57
-  - Proxy-58
-  - Proxy-59
-  - Proxy-60
-  - Proxy-61
-  - Proxy-62
-  - Proxy-63
-  - Proxy-64
-  - Proxy-65
-  - Proxy-66
-  - Proxy-67
-  - Proxy-68
-  - Proxy-69
-  - Proxy-70
-  - Proxy-71
-  - Proxy-72
-  - Proxy-73
-  - Proxy-74
-  - Proxy-75
-  - Proxy-76
-  - Proxy-77
-  - Proxy-78
-  - Proxy-79
-  - Proxy-80
+  - Auto-1
+  - Auto-2
+  - Auto-3
+  - Auto-4
+  - Auto-5
+  - Auto-6
+  - Auto-7
+  - Auto-8
+  - Auto-9
+  - Auto-10
+  - Auto-11
+  - Auto-12
+  - Auto-13
+  - Auto-14
+  - Auto-15
+  - Auto-16
+  - Auto-17
+  - Auto-18
+  - Auto-19
+  - Auto-20
+  - Auto-21
+  - Auto-22
+  - Auto-23
+  - Auto-24
+  - Auto-25
+  - Auto-26
+  - Auto-27
+  - Auto-28
+  - Auto-29
+  - Auto-30
+  - Auto-31
+  - Auto-32
+  - Auto-33
+  - Auto-34
+  - Auto-35
+  - Auto-36
+  - Auto-37
+  - Auto-38
+  - Auto-39
+  - Auto-40
+  - Auto-41
+  - Auto-42
+  - Auto-43
+  - Auto-44
+  - Auto-45
+  - Auto-46
+  - Auto-47
+  - Auto-48
+  - Auto-49
+  - Auto-50
+  - Auto-51
+  - Auto-52
+  - Auto-53
+  - Auto-54
+  - Auto-55
+  - Auto-56
+  - Auto-57
+  - Auto-58
+  - Auto-59
+  - Auto-60
+  - Auto-61
+  - Auto-62
+  - Auto-63
+  - Auto-64
+  - Auto-65
+  - Auto-66
+  - Auto-67
+  - Auto-68
+  - Auto-69
+  - Auto-70
+  - Auto-71
+  - Auto-72
+  - Auto-73
+  - Auto-74
+  - Auto-75
+  - Auto-76
+  - Auto-77
+  - Auto-78
+  - Auto-79
+  - Auto-80
+  - Auto-81
+  - Auto-82
+  - Auto-83
+  - Auto-84
+  - Auto-85
+  - Auto-86
+  - Auto-87
+  - Auto-88
+  - Auto-89
+  - Auto-90
+  - Auto-91
+  - Auto-92
+  - Auto-93
+  - Auto-94
+  - Auto-95
+  - Auto-96
+  - Auto-97
+  - Auto-98
+  - Auto-99
+  - Auto-100
+  - Auto-101
+  - Auto-102
+  - Auto-103
+  - Auto-104
+  - Auto-105
+  - Auto-106
+  - Auto-107
+  - Auto-108
+  - Auto-109
+  - Auto-110
+  - Auto-111
+  - Auto-112
+  - Auto-113
+  - Auto-114
+  - Auto-115
+  - Auto-116
+  - Auto-117
+  - Auto-118
+  - Auto-119
+  - Auto-120
+  - Auto-121
+  - Auto-122
+  - Auto-123
+  - Auto-124
+  - Auto-125
+  - Auto-126
+  - Auto-127
+  - Auto-128
+  - Auto-129
+  - Auto-130
+  - Auto-131
+  - Auto-132
+  - Auto-133
+  - Auto-134
+  - Auto-135
+  - Auto-136
+  - Auto-137
+  - Auto-138
+  - Auto-139
+  - Auto-140
+  - Auto-141
+  - Auto-142
+  - Auto-143
+  - Auto-144
+  - Auto-145
+  - Auto-146
+  - Auto-147
+  - Auto-148
+  - Auto-149
+  - Auto-150
+  - Auto-151
+  - Auto-152
+  - Auto-153
+  - Auto-154
+  - Auto-155
+  - Auto-156
+  - Auto-157
+  - Auto-158
+  - Auto-159
+  - Auto-160
+  - Auto-161
+  - Auto-162
+  - Auto-163
+  - Auto-164
+  - Auto-165
+  - Auto-166
+  - Auto-167
+  - Auto-168
+  - Auto-169
+  - Auto-170
+  - Auto-171
+  - Auto-172
+  - Auto-173
+  - Auto-174
+  - Auto-175
+  - Auto-176
+  - Auto-177
+  - Auto-178
+  - Auto-179
+  - Auto-180
+  - Auto-181
+  - Auto-182
+  - Auto-183
+  - Auto-184
+  - Auto-185
+  - Auto-186
+  - Auto-187
+  - Auto-188
+  - Auto-189
+  - Auto-190
+  - Auto-191
+  - Auto-192
+  - Auto-193
+  - Auto-194
+  - Auto-195
+  - Auto-196
+  - Auto-197
+  - Auto-198
+  - Auto-199
+  - Auto-200
+  - Auto-201
+  - Auto-202
+  - Auto-203
+  - Auto-204
+  - Auto-205
+  - Auto-206
+  - Auto-207
+  - Auto-208
+  - Auto-209
+  - Auto-210
+  - Auto-211
+  - Auto-212
+  - Auto-213
+  - Auto-214
+  - Auto-215
+  - Auto-216
+  - Auto-217
+  - Auto-218
+  - Auto-219
+  - Auto-220
+  - Auto-221
+  - Auto-222
+  - Auto-223
+  - Auto-224
+  - Auto-225
+  - Auto-226
+  - Auto-227
+  - Auto-228
+  - Auto-229
+  - Auto-230
+  - Auto-231
+  - Auto-232
+  - Auto-233
+  - Auto-234
+  - Auto-235
+  - Auto-236
+  - Auto-237
+  - Auto-238
+  - Auto-239
+  - Auto-240
+  - Auto-241
+  - Auto-242
+  - Auto-243
+  - Auto-244
+  - Auto-245
+  - Auto-246
+  - Auto-247
+  - Auto-248
+  - Auto-249
+  - Auto-250
+  - Auto-251
+  - Auto-252
+  - Auto-253
+  - Auto-254
+  - Auto-255
+  - Auto-256
+  - Auto-257
+  - Auto-258
+  - Auto-259
+  - Auto-260
+  - Auto-261
+  - Auto-262
+  - Auto-263
+  - Auto-264
+  - Auto-265
+  - Auto-266
+  - Auto-267
+  - Auto-268
+  - Auto-269
+  - Auto-270
+  - Auto-271
+  - Auto-272
+  - Auto-273
+  - Auto-274
+  - Auto-275
+  - Auto-276
+  - Auto-277
+  - Auto-278
+  - Auto-279
+  - Auto-280
+  - Auto-281
+  - Auto-282
+  - Auto-283
+  - Auto-284
+  - Auto-285
+  - Auto-286
+  - Auto-287
+  - Auto-288
+  - Auto-289
+  - Auto-290
+  - Auto-291
+  - Auto-292
+  - Auto-293
+  - Auto-294
+  - Auto-295
+  - Auto-296
+  - Auto-297
+  - Auto-298
+  - Auto-299
+  - Auto-300
+  - Auto-301
+  - Auto-302
+  - Auto-303
+  - Auto-304
+  - Auto-305
+  - Auto-306
+  - Auto-307
+  - Auto-308
+  - Auto-309
+  - Auto-310
+  - Auto-311
+  - Auto-312
+  - Auto-313
+  - Auto-314
+  - Auto-315
+  - Auto-316
+  - Auto-317
+  - Auto-318
+  - Auto-319
+  - Auto-320
+  - Auto-321
+  - Auto-322
+  - Auto-323
+  - Auto-324
+  - Auto-325
+  - Auto-326
+  - Auto-327
+  - Auto-328
+  - Auto-329
+  - Auto-330
+  - Auto-331
+  - Auto-332
+  - Auto-333
+  - Auto-334
+  - Auto-335
+  - Auto-336
+  - Auto-337
+  - Auto-338
+  - Auto-339
+  - Auto-340
+  - Auto-341
+  - Auto-342
+  - Auto-343
+  - Auto-344
+  - Auto-345
+  - Auto-346
+  - Auto-347
+  - Auto-348
+  - Auto-349
+  - Auto-350
+  - Auto-351
+  - Auto-352
+  - Auto-353
+  - Auto-354
+  - Auto-355
+  - Auto-356
+  - Auto-357
+  - Auto-358
+  - Auto-359
+  - Auto-360
+  - Auto-361
+  - Auto-362
+  - Auto-363
+  - Auto-364
+  - Auto-365
+  - Auto-366
+  - Auto-367
+  - Auto-368
+  - Auto-369
+  - Auto-370
+  - Auto-371
+  - Auto-372
+  - Auto-373
+  - Auto-374
+  - Auto-375
+  - Auto-376
+  - Auto-377
+  - Auto-378
+  - Auto-379
+  - Auto-380
+  - Auto-381
+  - Auto-382
+  - Auto-383
+  - Auto-384
+  - Auto-385
+  - Auto-386
+  - Auto-387
+  - Auto-388
+  - Auto-389
+  - Auto-390
+  - Auto-391
+  - Auto-392
+  - Auto-393
+  - Auto-394
+  - Auto-395
+  - Auto-396
+  - Auto-397
+  - Auto-398
+  - Auto-399
+  - Auto-400
+  - Auto-401
+  - Auto-402
+  - Auto-403
+  - Auto-404
+  - Auto-405
+  - Auto-406
+  - Auto-407
+  - Auto-408
+  - Auto-409
+  - Auto-410
+  - Auto-411
+  - Auto-412
+  - Auto-413
+  - Auto-414
+  - Auto-415
+  - Auto-416
+  - Auto-417
+  - Auto-418
+  - Auto-419
+  - Auto-420
+  - Auto-421
+  - Auto-422
+  - Auto-423
+  - Auto-424
+  - Auto-425
+  - Auto-426
+  - Auto-427
+  - Auto-428
+  - Auto-429
+  - Auto-430
+  - Auto-431
+  - Auto-432
+  - Auto-433
+  - Auto-434
+  - Auto-435
+  - Auto-436
+  - Auto-437
+  - Auto-438
+  - Auto-439
+  - Auto-440
+  - Auto-441
+  - Auto-442
+  - Auto-443
+  - Auto-444
+  - Auto-445
+  - Auto-446
+  - Auto-447
+  - Auto-448
+  - Auto-449
+  - Auto-450
+  - Auto-451
+  - Auto-452
+  - Auto-453
+  - Auto-454
+  - Auto-455
+  - Auto-456
+  - Auto-457
+  - Auto-458
+  - Auto-459
+  - Auto-460
+  - Auto-461
+  - Auto-462
+  - Auto-463
+  - Auto-464
+  - Auto-465
+  - Auto-466
+  - Auto-467
+  - Auto-468
+  - Auto-469
+  - Auto-470
+  - Auto-471
+  - Auto-472
+  - Auto-473
+  - Auto-474
+  - Auto-475
+  - Auto-476
+  - Auto-477
+  - Auto-478
+  - Auto-479
+  - Auto-480
+  - Auto-481
+  - Auto-482
+  - Auto-483
+  - Auto-484
+  - Auto-485
+  - Auto-486
+  - Auto-487
+  - Auto-488
+  - Auto-489
+  - Auto-490
+  - Auto-491
+  - Auto-492
+  - Auto-493
+  - Auto-494
+  - Auto-495
+  - Auto-496
+  - Auto-497
+  - Auto-498
+  - Auto-499
+  - Auto-500
+  - Auto-501
+  - Auto-502
+  - Auto-503
+  - Auto-504
+  - Auto-505
+  - Auto-506
+  - Auto-507
+  - Auto-508
+  - Auto-509
+  - Auto-510
+  - Auto-511
+  - Auto-512
+  - Auto-513
+  - Auto-514
+  - Auto-515
+  - Auto-516
+  - Auto-517
+  - Auto-518
+  - Auto-519
+  - Auto-520
+  - Auto-521
+  - Auto-522
+  - Auto-523
+  - Auto-524
+  - Auto-525
+  - Auto-526
+  - Auto-527
+  - Auto-528
+  - Auto-529
+  - Auto-530
+  - Auto-531
+  - Auto-532
+  - Auto-533
+  - Auto-534
+  - Auto-535
+  - Auto-536
+  - Auto-537
+  - Auto-538
+  - Auto-539
+  - Auto-540
+  - Auto-541
+  - Auto-542
+  - Auto-543
+  - Auto-544
+  - Auto-545
+  - Auto-546
+  - Auto-547
+  - Auto-548
+  - Auto-549
+  - Auto-550
+  - Auto-551
+  - Auto-552
+  - Auto-553
+  - Auto-554
+  - Auto-555
+  - Auto-556
+  - Auto-557
+  - Auto-558
+  - Auto-559
+  - Auto-560
+  - Auto-561
+  - Auto-562
+  - Auto-563
+  - Auto-564
+  - Auto-565
+  - Auto-566
+  - Auto-567
+  - Auto-568
+  - Auto-569
+  - Auto-570
+  - Auto-571
+  - Auto-572
+  - Auto-573
+  - Auto-574
+  - Auto-575
+  - Auto-576
+  - Auto-577
+  - Auto-578
+  - Auto-579
+  - Auto-580
+  - Auto-581
+  - Auto-582
+  - Auto-583
+  - Auto-584
+  - Auto-585
+  - Auto-586
+  - Auto-587
+  - Auto-588
+  - Auto-589
+  - Auto-590
+  - Auto-591
+  - Auto-592
+  - Auto-593
+  - Auto-594
+  - Auto-595
+  - Auto-596
+  - Auto-597
+  - Auto-598
+  - Auto-599
+  - Auto-600
+  - Auto-601
+  - Auto-602
+  - Auto-603
+  - Auto-604
+  - Auto-605
+  - Auto-606
+  - Auto-607
+  - Auto-608
+  - Auto-609
+  - Auto-610
+  - Auto-611
+  - Auto-612
+  - Auto-613
+  - Auto-614
+  - Auto-615
+  - Auto-616
+  - Auto-617
+  - Auto-618
+  - Auto-619
+  - Auto-620
+  - Auto-621
+  - Auto-622
+  - Auto-623
+  - Auto-624
+  - Auto-625
+  - Auto-626
+  - Auto-627
+  - Auto-628
+  - Auto-629
+  - Auto-630
+  - Auto-631
+  - Auto-632
+  - Auto-633
+  - Auto-634
+  - Auto-635
+  - Auto-636
+  - Auto-637
+  - Auto-638
+  - Auto-639
+  - Auto-640
+  - Auto-641
+  - Auto-642
+  - Auto-643
+  - Auto-644
+  - Auto-645
+  - Auto-646
+  - Auto-647
+  - Auto-648
+  - Auto-649
+  - Auto-650
+  - Auto-651
+  - Auto-652
+  - Auto-653
+  - Auto-654
+  - Auto-655
+  - Auto-656
+  - Auto-657
+  - Auto-658
+  - Auto-659
+  - Auto-660
+  - Auto-661
+  - Auto-662
+  - Auto-663
+  - Auto-664
+  - Auto-665
+  - Auto-666
+  - Auto-667
+  - Auto-668
+  - Auto-669
+  - Auto-670
+  - Auto-671
+  - Auto-672
+  - Auto-673
+  - Auto-674
+  - Auto-675
+  - Auto-676
+  - Auto-677
+  - Auto-678
+  - Auto-679
+  - Auto-680
+  - Auto-681
+  - Auto-682
+  - Auto-683
+  - Auto-684
+  - Auto-685
+  - Auto-686
+  - Auto-687
+  - Auto-688
+  - Auto-689
+  - Auto-690
+  - Auto-691
+  - Auto-692
+  - Auto-693
+  - Auto-694
+  - Auto-695
+  - Auto-696
+  - Auto-697
+  - Auto-698
+  - Auto-699
+  - Auto-700
+  - Auto-701
+  - Auto-702
+  - Auto-703
+  - Auto-704
+  - Auto-705
+  - Auto-706
+  - Auto-707
+  - Auto-708
+  - Auto-709
+  - Auto-710
+  - Auto-711
+  - Auto-712
+  - Auto-713
+  - Auto-714
+  - Auto-715
+  - Auto-716
+  - Auto-717
+  - Auto-718
+  - Auto-719
+  - Auto-720
+  - Auto-721
+  - Auto-722
+  - Auto-723
+  - Auto-724
+  - Auto-725
+  - Auto-726
+  - Auto-727
+  - Auto-728
+  - Auto-729
+  - Auto-730
+  - Auto-731
+  - Auto-732
+  - Auto-733
+  - Auto-734
+  - Auto-735
+  - Auto-736
+  - Auto-737
+  - Auto-738
+  - Auto-739
+  - Auto-740
+  - Auto-741
+  - Auto-742
+  - Auto-743
+  - Auto-744
+  - Auto-745
+  - Auto-746
+  - Auto-747
+  - Auto-748
+  - Auto-749
+  - Auto-750
+  - Auto-751
+  - Auto-752
+  - Auto-753
+  - Auto-754
+  - Auto-755
+  - Auto-756
+  - Auto-757
+  - Auto-758
+  - Auto-759
+  - Auto-760
+  - Auto-761
+  - Auto-762
+  - Auto-763
+  - Auto-764
+  - Auto-765
+  - Auto-766
+  - Auto-767
+  - Auto-768
+  - Auto-769
+  - Auto-770
+  - Auto-771
+  - Auto-772
+  - Auto-773
+  - Auto-774
+  - Auto-775
+  - Auto-776
+  - Auto-777
+  - Auto-778
+  - Auto-779
+  - Auto-780
+  - Auto-781
+  - Auto-782
+  - Auto-783
+  - Auto-784
+  - Auto-785
+  - Auto-786
+  - Auto-787
+  - Auto-788
+  - Auto-789
+  - Auto-790
+  - Auto-791
+  - Auto-792
+  - Auto-793
+  - Auto-794
+  - Auto-795
+  - Auto-796
+  - Auto-797
+  - Auto-798
+  - Auto-799
+  - Auto-800
+  - Auto-801
+  - Auto-802
+  - Auto-803
+  - Auto-804
+  - Auto-805
+  - Auto-806
+  - Auto-807
+  - Auto-808
+  - Auto-809
+  - Auto-810
+  - Auto-811
+  - Auto-812
+  - Auto-813
+  - Auto-814
+  - Auto-815
+  - Auto-816
+  - Auto-817
+  - Auto-818
+  - Auto-819
+  - Auto-820
+  - Auto-821
+  - Auto-822
+  - Auto-823
+  - Auto-824
+  - Auto-825
+  - Auto-826
+  - Auto-827
+  - Auto-828
+  - Auto-829
+  - Auto-830
+  - Auto-831
+  - Auto-832
+  - Auto-833
+  - Auto-834
+  - Auto-835
+  - Auto-836
+  - Auto-837
+  - Auto-838
+  - Auto-839
+  - Auto-840
+  - Auto-841
+  - Auto-842
+  - Auto-843
+  - Auto-844
+  - Auto-845
+  - Auto-846
+  - Auto-847
+  - Auto-848
+  - Auto-849
+  - Auto-850
+  - Auto-851
+  - Auto-852
+  - Auto-853
+  - Auto-854
+  - Auto-855
+  - Auto-856
+  - Auto-857
+  - Auto-858
+  - Auto-859
+  - Auto-860
+  - Auto-861
+  - Auto-862
+  - Auto-863
+  - Auto-864
+  - Auto-865
+  - Auto-866
+  - Auto-867
+  - Auto-868
+  - Auto-869
+  - Auto-870
+  - Auto-871
+  - Auto-872
+  - Auto-873
+  - Auto-874
+  - Auto-875
+  - Auto-876
+  - Auto-877
+  - Auto-878
+  - Auto-879
+  - Auto-880
+  - Auto-881
+  - Auto-882
+  - Auto-883
+  - Auto-884
+  - Auto-885
+  - Auto-886
+  - Auto-887
+  - Auto-888
+  - Auto-889
+  - Auto-890
+  - Auto-891
+  - Auto-892
+  - Auto-893
+  - Auto-894
+  - Auto-895
+  - Auto-896
+  - Auto-897
+  - Auto-898
+  - Auto-899
+  - Auto-900
+  - Auto-901
+  - Auto-902
+  - Auto-903
+  - Auto-904
+  - Auto-905
+  - Auto-906
+  - Auto-907
+  - Auto-908
+  - Auto-909
+  - Auto-910
+  - Auto-911
+  - Auto-912
+  - Auto-913
+  - Auto-914
+  - Auto-915
+  - Auto-916
+  - Auto-917
+  - Auto-918
+  - Auto-919
+  - Auto-920
+  - Auto-921
+  - Auto-922
+  - Auto-923
+  - Auto-924
+  - Auto-925
+  - Auto-926
+  - Auto-927
+  - Auto-928
+  - Auto-929
+  - Auto-930
+  - Auto-931
+  - Auto-932
+  - Auto-933
+  - Auto-934
+  - Auto-935
+  - Auto-936
+  - Auto-937
+  - Auto-938
+  - Auto-939
+  - Auto-940
+  - Auto-941
+  - Auto-942
+  - Auto-943
+  - Auto-944
+  - Auto-945
+  - Auto-946
+  - Auto-947
+  - Auto-948
+  - Auto-949
+  - Auto-950
+  - Auto-951
+  - Auto-952
+  - Auto-953
+  - Auto-954
+  - Auto-955
+  - Auto-956
+  - Auto-957
+  - Auto-958
+  - Auto-959
+  - Auto-960
+  - Auto-961
+  - Auto-962
+  - Auto-963
+  - Auto-964
+  - Auto-965
+  - Auto-966
+  - Auto-967
+  - Auto-968
+  - Auto-969
+  - Auto-970
+  - Auto-971
+  - Auto-972
+  - Auto-973
+  - Auto-974
+  - Auto-975
+  - Auto-976
+  - Auto-977
+  - Auto-978
+  - Auto-979
+  - Auto-980
+  - Auto-981
+  - Auto-982
+  - Auto-983
+  - Auto-984
+  - Auto-985
+  - Auto-986
+  - Auto-987
+  - Auto-988
+  - Auto-989
+  - Auto-990
+  - Auto-991
+  - Auto-992
+  - Auto-993
+  - Auto-994
+  - Auto-995
+  - Auto-996
+  - Auto-997
+  - Auto-998
+  - Auto-999
+  - Auto-1000
+  - Auto-1001
+  - Auto-1002
+  - Auto-1003
+  - Auto-1004
+  - Auto-1005
+  - Auto-1006
+  - Auto-1007
+  - Auto-1008
+  - Auto-1009
+  - Auto-1010
+  - Auto-1011
+  - Auto-1012
+  - Auto-1013
+  - Auto-1014
+  - Auto-1015
+  - Auto-1016
+  - Auto-1017
+  - Auto-1018
+  - Auto-1019
+  - Auto-1020
+  - Auto-1021
+  - Auto-1022
+  - Auto-1023
+  - Auto-1024
+  - Auto-1025
+  - Auto-1026
+  - Auto-1027
+  - Auto-1028
+  - Auto-1029
+  - Auto-1030
+  - Auto-1031
+  - Auto-1032
+  - Auto-1033
+  - Auto-1034
+  - Auto-1035
+  - Auto-1036
+  - Auto-1037
+  - Auto-1038
+  - Auto-1039
+  - Auto-1040
+  - Auto-1041
+  - Auto-1042
+  - Auto-1043
+  - Auto-1044
+  - Auto-1045
+  - Auto-1046
+  - Auto-1047
+  - Auto-1048
+  - Auto-1049
+  - Auto-1050
+  - Auto-1051
+  - Auto-1052
+  - Auto-1053
+  - Auto-1054
+  - Auto-1055
+  - Auto-1056
+  - Auto-1057
+  - Auto-1058
+  - Auto-1059
+  - Auto-1060
+  - Auto-1061
+  - Auto-1062
+  - Auto-1063
+  - Auto-1064
+  - Auto-1065
+  - Auto-1066
+  - Auto-1067
+  - Auto-1068
+  - Auto-1069
+  - Auto-1070
+  - Auto-1071
+  - Auto-1072
+  - Auto-1073
+  - Auto-1074
+  - Auto-1075
+  - Auto-1076
+  - Auto-1077
+  - Auto-1078
+  - Auto-1079
+  - Auto-1080
+rule-providers:
+  malware:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/malware.txt
+    path: ./ruleset/malware.txt
+    interval: 86400
+  malware-cidr:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/malware-ip.txt
+    path: ./ruleset/malware-cidr.txt
+    interval: 86400
+  phishing:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/phishing.txt
+    path: ./ruleset/phishing.txt
+    interval: 86400
+  phishing-cidr:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/phishing-ip.txt
+    path: ./ruleset/phishing-cidr.txt
+    interval: 86400
+  cryptominers:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/cryptominers.txt
+    path: ./ruleset/cryptominers.txt
+    interval: 86400
+  category-ads-all:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/category-ads-all.txt
+    path: ./ruleset/category-ads-all.txt
+    interval: 86400
+  ir:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/ir.txt
+    path: ./ruleset/ir.txt
+    interval: 86400
+  ir-cidr:
+    type: http
+    format: text
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/ircidr.txt
+    path: ./ruleset/ir-cidr.txt
+    interval: 86400
 rules:
+- RULE-SET,malware,REJECT
+- RULE-SET,phishing,REJECT
+- RULE-SET,cryptominers,REJECT
+- RULE-SET,category-ads-all,REJECT
+- RULE-SET,malware-cidr,REJECT
+- RULE-SET,phishing-cidr,REJECT
+- GEOIP,IR,DIRECT
+- RULE-SET,ir,DIRECT
+- RULE-SET,ir-cidr,DIRECT
 - MATCH,💚خانه
+ntp:
+  enable: true
+  server: time.cloudflare.com
+  port: 123
+  interval: 30
