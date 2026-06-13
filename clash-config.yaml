@@ -3,7 +3,6 @@ ipv6: true
 allow-lan: true
 mode: rule
 log-level: info
-keepalive: 25
 unified-delay: false
 geo-auto-update: true
 geo-update-interval: 168
@@ -11,10 +10,6 @@ external-controller: 127.0.0.1:9090
 secret: Hpp@19921992
 external-ui: ui
 external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
-external-controller-cors:
-  allow-origins:
-  - '*'
-  allow-private-network: true
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -46,7 +41,6 @@ sniffer:
   enable: true
   force-dns-mapping: true
   parse-pure-ip: true
-  override-destination: false
   sniff:
     HTTP:
       ports:
@@ -70,1055 +64,565 @@ sniffer:
       - 443
       - 8443
 proxies:
-- name: 🔗 Auto-1
+- name: Auto-1
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-2
+- name: Auto-2
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-3
+- name: Auto-3
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-4
+- name: Auto-4
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-5
+- name: Auto-5
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-6
+- name: Auto-6
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-7
+- name: Auto-7
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-8
+- name: Auto-8
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-9
+- name: Auto-9
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-10
+- name: Auto-10
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-11
+- name: Auto-11
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-12
+- name: Auto-12
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-13
+- name: Auto-13
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-14
+- name: Auto-14
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-15
+- name: Auto-15
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-16
+- name: Auto-16
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-17
+- name: Auto-17
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-18
+- name: Auto-18
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-19
+- name: Auto-19
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-20
+- name: Auto-20
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-21
+- name: Auto-21
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-22
+- name: Auto-22
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-23
+- name: Auto-23
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-24
+- name: Auto-24
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-25
+- name: Auto-25
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-26
+- name: Auto-26
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-27
+- name: Auto-27
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-28
+- name: Auto-28
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-29
+- name: Auto-29
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-30
+- name: Auto-30
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-31
+- name: Auto-31
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-32
+- name: Auto-32
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-33
+- name: Auto-33
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-34
+- name: Auto-34
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-35
+- name: Auto-35
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-36
+- name: Auto-36
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-37
+- name: Auto-37
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-38
+- name: Auto-38
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-39
+- name: Auto-39
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-40
+- name: Auto-40
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-41
+- name: Auto-41
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-42
+- name: Auto-42
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-43
+- name: Auto-43
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-44
+- name: Auto-44
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-45
+- name: Auto-45
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-46
+- name: Auto-46
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-47
+- name: Auto-47
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-48
+- name: Auto-48
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-49
+- name: Auto-49
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🔗 Auto-50
+- name: Auto-50
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-51
+- name: Proxy-51
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-52
+- name: Proxy-52
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-53
+- name: Proxy-53
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-54
+- name: Proxy-54
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-55
+- name: Proxy-55
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-56
+- name: Proxy-56
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-57
+- name: Proxy-57
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-58
+- name: Proxy-58
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-59
+- name: Proxy-59
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-60
+- name: Proxy-60
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-61
+- name: Proxy-61
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-62
+- name: Proxy-62
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-63
+- name: Proxy-63
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-64
+- name: Proxy-64
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-65
+- name: Proxy-65
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-66
+- name: Proxy-66
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-67
+- name: Proxy-67
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-68
+- name: Proxy-68
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-69
+- name: Proxy-69
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-70
+- name: Proxy-70
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-71
+- name: Proxy-71
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-72
+- name: Proxy-72
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-73
+- name: Proxy-73
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-74
+- name: Proxy-74
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-75
+- name: Proxy-75
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-76
+- name: Proxy-76
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-77
+- name: Proxy-77
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-78
+- name: Proxy-78
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-79
+- name: Proxy-79
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
-- name: 🌐 Proxy-80
+- name: Proxy-80
   type: ss
   server: 127.0.0.1
   port: 443
   cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-81
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-82
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-83
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-84
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-85
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-86
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-87
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-88
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-89
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-90
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-91
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-92
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-93
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-94
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-95
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-96
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-97
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-98
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-99
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-100
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-101
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-102
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-103
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-104
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-105
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-106
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-107
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-108
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-109
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-110
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-111
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-112
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-113
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-114
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-115
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-116
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-117
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-118
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-119
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-120
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-121
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-122
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-123
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-124
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-125
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-126
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-127
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-128
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-129
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-130
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-131
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-132
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-133
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-134
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-135
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-136
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-137
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-138
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-139
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-140
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-141
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-142
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-143
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-144
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-145
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-146
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-147
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-148
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-149
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
-  udp: true
-- name: 🌐 Proxy-150
-  type: ss
-  server: 127.0.0.1
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: password
+  password: dummy
   udp: true
 proxy-groups:
 - name: 💚خانه
@@ -1131,155 +635,85 @@ proxy-groups:
   interval: 180
   tolerance: 100
   proxies:
-  - 🌐 Proxy-1
-  - 🌐 Proxy-2
-  - 🌐 Proxy-3
-  - 🌐 Proxy-4
-  - 🌐 Proxy-5
-  - 🌐 Proxy-6
-  - 🌐 Proxy-7
-  - 🌐 Proxy-8
-  - 🌐 Proxy-9
-  - 🌐 Proxy-10
-  - 🌐 Proxy-11
-  - 🌐 Proxy-12
-  - 🌐 Proxy-13
-  - 🌐 Proxy-14
-  - 🌐 Proxy-15
-  - 🌐 Proxy-16
-  - 🌐 Proxy-17
-  - 🌐 Proxy-18
-  - 🌐 Proxy-19
-  - 🌐 Proxy-20
-  - 🌐 Proxy-21
-  - 🌐 Proxy-22
-  - 🌐 Proxy-23
-  - 🌐 Proxy-24
-  - 🌐 Proxy-25
-  - 🌐 Proxy-26
-  - 🌐 Proxy-27
-  - 🌐 Proxy-28
-  - 🌐 Proxy-29
-  - 🌐 Proxy-30
-  - 🌐 Proxy-31
-  - 🌐 Proxy-32
-  - 🌐 Proxy-33
-  - 🌐 Proxy-34
-  - 🌐 Proxy-35
-  - 🌐 Proxy-36
-  - 🌐 Proxy-37
-  - 🌐 Proxy-38
-  - 🌐 Proxy-39
-  - 🌐 Proxy-40
-  - 🌐 Proxy-41
-  - 🌐 Proxy-42
-  - 🌐 Proxy-43
-  - 🌐 Proxy-44
-  - 🌐 Proxy-45
-  - 🌐 Proxy-46
-  - 🌐 Proxy-47
-  - 🌐 Proxy-48
-  - 🌐 Proxy-49
-  - 🌐 Proxy-50
-  - 🌐 Proxy-51
-  - 🌐 Proxy-52
-  - 🌐 Proxy-53
-  - 🌐 Proxy-54
-  - 🌐 Proxy-55
-  - 🌐 Proxy-56
-  - 🌐 Proxy-57
-  - 🌐 Proxy-58
-  - 🌐 Proxy-59
-  - 🌐 Proxy-60
-  - 🌐 Proxy-61
-  - 🌐 Proxy-62
-  - 🌐 Proxy-63
-  - 🌐 Proxy-64
-  - 🌐 Proxy-65
-  - 🌐 Proxy-66
-  - 🌐 Proxy-67
-  - 🌐 Proxy-68
-  - 🌐 Proxy-69
-  - 🌐 Proxy-70
-  - 🌐 Proxy-71
-  - 🌐 Proxy-72
-  - 🌐 Proxy-73
-  - 🌐 Proxy-74
-  - 🌐 Proxy-75
-  - 🌐 Proxy-76
-  - 🌐 Proxy-77
-  - 🌐 Proxy-78
-  - 🌐 Proxy-79
-  - 🌐 Proxy-80
-  - 🌐 Proxy-81
-  - 🌐 Proxy-82
-  - 🌐 Proxy-83
-  - 🌐 Proxy-84
-  - 🌐 Proxy-85
-  - 🌐 Proxy-86
-  - 🌐 Proxy-87
-  - 🌐 Proxy-88
-  - 🌐 Proxy-89
-  - 🌐 Proxy-90
-  - 🌐 Proxy-91
-  - 🌐 Proxy-92
-  - 🌐 Proxy-93
-  - 🌐 Proxy-94
-  - 🌐 Proxy-95
-  - 🌐 Proxy-96
-  - 🌐 Proxy-97
-  - 🌐 Proxy-98
-  - 🌐 Proxy-99
-  - 🌐 Proxy-100
-  - 🌐 Proxy-101
-  - 🌐 Proxy-102
-  - 🌐 Proxy-103
-  - 🌐 Proxy-104
-  - 🌐 Proxy-105
-  - 🌐 Proxy-106
-  - 🌐 Proxy-107
-  - 🌐 Proxy-108
-  - 🌐 Proxy-109
-  - 🌐 Proxy-110
-  - 🌐 Proxy-111
-  - 🌐 Proxy-112
-  - 🌐 Proxy-113
-  - 🌐 Proxy-114
-  - 🌐 Proxy-115
-  - 🌐 Proxy-116
-  - 🌐 Proxy-117
-  - 🌐 Proxy-118
-  - 🌐 Proxy-119
-  - 🌐 Proxy-120
-  - 🌐 Proxy-121
-  - 🌐 Proxy-122
-  - 🌐 Proxy-123
-  - 🌐 Proxy-124
-  - 🌐 Proxy-125
-  - 🌐 Proxy-126
-  - 🌐 Proxy-127
-  - 🌐 Proxy-128
-  - 🌐 Proxy-129
-  - 🌐 Proxy-130
-  - 🌐 Proxy-131
-  - 🌐 Proxy-132
-  - 🌐 Proxy-133
-  - 🌐 Proxy-134
-  - 🌐 Proxy-135
-  - 🌐 Proxy-136
-  - 🌐 Proxy-137
-  - 🌐 Proxy-138
-  - 🌐 Proxy-139
-  - 🌐 Proxy-140
-  - 🌐 Proxy-141
-  - 🌐 Proxy-142
-  - 🌐 Proxy-143
-  - 🌐 Proxy-144
-  - 🌐 Proxy-145
-  - 🌐 Proxy-146
-  - 🌐 Proxy-147
-  - 🌐 Proxy-148
-  - 🌐 Proxy-149
-  - 🌐 Proxy-150
+  - Proxy-1
+  - Proxy-2
+  - Proxy-3
+  - Proxy-4
+  - Proxy-5
+  - Proxy-6
+  - Proxy-7
+  - Proxy-8
+  - Proxy-9
+  - Proxy-10
+  - Proxy-11
+  - Proxy-12
+  - Proxy-13
+  - Proxy-14
+  - Proxy-15
+  - Proxy-16
+  - Proxy-17
+  - Proxy-18
+  - Proxy-19
+  - Proxy-20
+  - Proxy-21
+  - Proxy-22
+  - Proxy-23
+  - Proxy-24
+  - Proxy-25
+  - Proxy-26
+  - Proxy-27
+  - Proxy-28
+  - Proxy-29
+  - Proxy-30
+  - Proxy-31
+  - Proxy-32
+  - Proxy-33
+  - Proxy-34
+  - Proxy-35
+  - Proxy-36
+  - Proxy-37
+  - Proxy-38
+  - Proxy-39
+  - Proxy-40
+  - Proxy-41
+  - Proxy-42
+  - Proxy-43
+  - Proxy-44
+  - Proxy-45
+  - Proxy-46
+  - Proxy-47
+  - Proxy-48
+  - Proxy-49
+  - Proxy-50
+  - Proxy-51
+  - Proxy-52
+  - Proxy-53
+  - Proxy-54
+  - Proxy-55
+  - Proxy-56
+  - Proxy-57
+  - Proxy-58
+  - Proxy-59
+  - Proxy-60
+  - Proxy-61
+  - Proxy-62
+  - Proxy-63
+  - Proxy-64
+  - Proxy-65
+  - Proxy-66
+  - Proxy-67
+  - Proxy-68
+  - Proxy-69
+  - Proxy-70
+  - Proxy-71
+  - Proxy-72
+  - Proxy-73
+  - Proxy-74
+  - Proxy-75
+  - Proxy-76
+  - Proxy-77
+  - Proxy-78
+  - Proxy-79
+  - Proxy-80
 rules:
 - MATCH,💚خانه
